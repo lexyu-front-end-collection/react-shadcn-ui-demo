@@ -5,7 +5,7 @@ import tsconfigPaths from 'vite-tsconfig-paths'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tsconfigPaths()],
-  base: "/react-shadcn-ui-demos/",
+  base: "/react-shadcn-ui-demo/",
   server: {
     hmr: {
       protocol: 'ws',
