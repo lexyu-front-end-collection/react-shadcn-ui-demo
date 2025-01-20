@@ -41,9 +41,8 @@ const StatefulLoginForm = () => {
     }
 
     return (
-        <div className='inline-block'>
+        <div className=''>
             <h1 className='mb-4'>Stateful LoginForm (Card + Label + Input + Button + zodResolver + useForm + zod)</h1>
-
             <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)}>
                     <Card>

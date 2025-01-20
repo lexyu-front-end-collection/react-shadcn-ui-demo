@@ -13,7 +13,7 @@ import { Input } from '@/components/ui/input'
 
 export function LoginForm() {
     return (
-        <div className='inline-block'>
+        <div className=''>
 
             <h1 className='mb-4'>ShadCN LoginForm (Card + Label + Input + Button)</h1>
 
