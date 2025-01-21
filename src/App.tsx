@@ -9,6 +9,7 @@ import {
 	// BreadcrumbLink,
 	BreadcrumbList,
 	BreadcrumbPage,
+	BreadcrumbSeparator,
 	// BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb"
 import {
@@ -45,14 +46,14 @@ export function useCurrentPageTitle() {
 	const [currentTitle, setCurrentTitle] = useState(() => {
 		const hash = window.location.hash;
 		const flatRoutes = flattenRoutes(routes);
-		return flatRoutes[hash]?.title || "Page Not Found";
+		return flatRoutes[hash]?.title || "Home";
 	});
 
 	useEffect(() => {
 		const updateTitle = () => {
 			const hash = window.location.hash;
 			const flatRoutes = flattenRoutes(routes);
-			setCurrentTitle(flatRoutes[hash]?.title || "Page Not Found");
+			setCurrentTitle(flatRoutes[hash]?.title || "Home");
 		};
 
 		window.addEventListener('hashchange', updateTitle);
@@ -69,7 +70,7 @@ function App() {
 	// 	const flatRoutes = flattenRoutes(routes);
 	// 	return flatRoutes[hash]?.title || "Page Not Found";
 	// };
-	
+
 	const currentPageTitle = useCurrentPageTitle();
 
 	return (
@@ -77,12 +78,13 @@ function App() {
 			<SidebarProvider>
 				<AppSidebar />
 				<SidebarInset>
-					<header className="flex h-16 shrink-0 items-center gap-2">
-						<div className="flex items-center gap-2 px-4">
+					<header className="flex gap-2 items-center h-16 border-b shrink-0">
+						<div className="flex gap-2 items-center px-4">
 							<SidebarTrigger className="-ml-1" />
 							<Separator orientation="vertical" className="mr-2 h-4" />
 							<Breadcrumb>
 								<BreadcrumbList>
+									<BreadcrumbSeparator className="hidden md:block" />
 									<BreadcrumbItem>
 										<BreadcrumbPage>{currentPageTitle}</BreadcrumbPage>
 									</BreadcrumbItem>
@@ -90,7 +92,7 @@ function App() {
 							</Breadcrumb>
 						</div>
 					</header>
-					<div className="flex flex-1 flex-col gap-4 p-4 pt-0 justify-center items-center">
+					<div className="flex flex-col flex-1 gap-4 justify-center items-center p-4 pt-0">
 						<Router />
 					</div>
 				</SidebarInset>

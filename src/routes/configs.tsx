@@ -34,6 +34,61 @@ export const routes: RouteConfig[] = [
         title: "Buttons",
         url: "#/buttons",
         component: () => <Buttons />
+    },
+    {
+        title: "TEMP",
+        children: [
+            {
+                title: "Child 1",
+                url: "#",
+                component: () => undefined
+            },
+            {
+                title: "Child 2",
+                url: "#",
+                component: () => undefined
+            },
+            {
+                title: "Child 3",
+                url: "#",
+                component: () => undefined
+            },
+            {
+                title: "Child 4",
+                url: "#",
+                component: () => undefined
+            },
+            {
+                title: "Child 5",
+                url: "#",
+                component: () => undefined
+            },
+            {
+                title: "Child 6",
+                url: "#",
+                component: () => undefined
+            },
+            {
+                title: "Child 7",
+                url: "#",
+                component: () => undefined
+            },
+            {
+                title: "Child 8",
+                url: "#",
+                component: () => undefined
+            },
+            {
+                title: "Child 9",
+                url: "#",
+                component: () => undefined
+            },
+            {
+                title: "Child 10",
+                url: "#",
+                component: () => undefined
+            },
+        ]
     }
 ]
 

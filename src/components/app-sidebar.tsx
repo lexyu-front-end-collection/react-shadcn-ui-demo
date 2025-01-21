@@ -62,7 +62,7 @@ export function AppSidebar() {
                   {route.children ? (
                     <>
                       <CollapsibleTrigger asChild>
-                        <SidebarMenuButton tooltip={route.title}>
+                        <SidebarMenuButton size="lg" tooltip={route.title}>
                           <span>{route.title}</span>
                           <ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
                         </SidebarMenuButton>
@@ -71,7 +71,7 @@ export function AppSidebar() {
                         <SidebarMenuSub>
                           {route.children.map((childRoute) => (
                             <SidebarMenuSubItem key={childRoute.title}>
-                              <SidebarMenuSubButton asChild>
+                              <SidebarMenuSubButton size="md" asChild>
                                 <a href={childRoute.url}>{childRoute.title}</a>
                               </SidebarMenuSubButton>
                             </SidebarMenuSubItem>
@@ -80,7 +80,7 @@ export function AppSidebar() {
                       </CollapsibleContent>
                     </>
                   ) : (
-                    <SidebarMenuButton asChild tooltip={route.title}>
+                    <SidebarMenuButton size="lg" asChild tooltip={route.title}>
                       <a href={route.url}>
                         <span>{route.title}</span>
                       </a>
